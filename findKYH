@@ -1,0 +1,14 @@
+
+
+int findKYH(int n, int m)
+{
+	int divisor[100] = {0};
+	int current = 0;
+	for (int i = 1; i <= n; i++)
+	{
+		// 나머지가 0이면 약수
+		if (n%i == 0) { divisor[current] = i; current++; }
+	}
+	if (m > current) { return 0; }
+	else { return divisor[m - 1]; }
+}
